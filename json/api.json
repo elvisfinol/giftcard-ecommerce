@@ -1,0 +1,20 @@
+        {
+            "price": 10,
+            "id": 1,
+            "gift-card": "amazon"
+        },
+        {
+            "price": 25,
+            "id": 1,
+            "gift-card": "netflix"
+        },
+        {
+            "price": 50,
+            "id": 1,
+            "gift-card": "spotify"
+        },
+        {
+            "price": 100,
+            "id": 1,
+            "gift-card": "playstore"
+        }

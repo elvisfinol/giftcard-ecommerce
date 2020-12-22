@@ -1,0 +1,204 @@
+/*--------------- SETUP CSS ---------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+  --primaryColor: #d6e0f0;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+  font-family: 'Raleway', sans-serif;
+}
+
+
+/* --------------- Navbar ---------------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: var(--primaryColor);
+  z-index: 1;
+}
+
+.navbar-center {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 1.5rem;
+}
+
+.navbar-center h3 {
+  font-weight: 200;
+}
+
+.nav-icon {
+  font-size: 1.5rem;
+}
+
+.cart-btn {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-items {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: var(--mainBlack);
+  padding: 0 5px;
+  border-radius: 30%;
+  color: var(--primaryColor);
+}
+
+/* --------------- Hero ---------------- */
+
+.hero {
+  min-height: calc(70vh - 60px);
+  background: url("https://previews.123rf.com/images/dennizn/dennizn2005/dennizn200500278/147690312-montreal-canada-april-6-2020-different-gift-cards-of-many-brands-such-as-amazon-netflix-xbox-google-.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  padding: 2rem;
+}
+
+.banner-title {
+  font-size: 3.4rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing) margin-bottom: 3rem;
+}
+
+.banner-btn {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1rem;
+  background: var(--primaryColor);
+  color: var(--mainBlack);
+  border: 1px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+
+.banner-btn:hover {
+  background: white;
+  color: var(--mainBlack);
+}
+
+/* --------------- End of Hero ---------------- */
+
+
+
+
+/* --------------- Products ---------------- */
+
+.products {
+  padding: 4rem 0;
+}
+
+.section-title h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 5rem;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+
+.products-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1rem;
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.bag-btn {
+  position: absolute;
+  top: 70%;
+  right: 0;
+  background: var(--primaryColor);
+  border: none;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+  letter-spacing: var(--mainSpacing);
+  font-weight: bold;
+  transition: var(--mainTransition);
+  transform: translateX(101%);
+  cursor: pointer;
+}
+
+.bag-btn:hover {
+  color: var(--mainWhite);
+}
+
+.fa-shopping-cart {
+  margin-right: 0.5rem;
+}
+
+.img-container:hover .bag-btn {
+  transform: translateX(0);
+}
+
+.product-img {
+  display: block;
+  width: 100%;
+  min-height: 12rem;
+  transition: var(--mainTransition);
+}
+
+.img-container:hover .product-img {
+  opacity: 0.5;
+}
+
+.product h3 {
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  margin-top: 0;
+  letter-spacing: var(--mainSpacing);
+  text-align: center;
+}
+
+.product h4 {
+  margin-top: 0.7rem;
+  letter-spacing: var(--mainSpacing);
+  color: var(--mainBlack);
+  text-align: center;
+}
+
+/* ---------------End of Products ---------------- */
+
+/* --------------- cart ---------------- */
+/* --------------- end cart ---------------- */
