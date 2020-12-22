@@ -28,7 +28,7 @@ function marcoTemporal() {
     }
 }
 
-//////////////////////////// DESAFIO 5 //////////////////////////// 
+//////////////////////////// DESAFIO 5 - Objects //////////////////////////// 
 
 function crearObjetoSpotify(correoSP, nombreSP, contrasenaSP) {
     this.correoSpotify = correoSP;
@@ -49,6 +49,30 @@ function crearCuentaSpotify() {
 
     let cuentaSpotify = new crearObjetoSpotify(correo, nombre, contrasena);
     cuentaSpotify.mostrarCuenta();
+}
+
+
+//////////////////////////// DESAFIO 6 - Uso de arrays //////////////////////////// 
+
+function mensaje() {
+    let mensajeBienvenida = ['Hola', 'bienvenido', 'a', 'nuestra', 'tienda'];
+    console.log(mensajeBienvenida.length); // Muestra 5 
+
+    mensajeBienvenida.pop();
+
+    console.log(mensajeBienvenida.length); // Muestra 4 debido a que estoy ejecutando el method pop()
+
+    mensajeBienvenida.push('tienda');
+
+    console.log(mensajeBienvenida.length); // Muestra 5 nuevamente porque agregue "tienda"
+
+    mensajeBienvenida.push('de', 'tarjetas', 'de', 'regalo');
+
+    mensajeBienvenida[1] = 'bienvenid@s'; // Cambio el valor de "Bienvenido" por "Bienvenid@s"
+
+    console.log(mensajeBienvenida); // Output del array 
+
+    console.log(mensajeBienvenida.join()) // Output del array en formato string
 }
 
 
