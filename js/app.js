@@ -56,15 +56,15 @@ function crearCuentaSpotify() {
 
 function mensaje() {
     let mensajeBienvenida = ['Hola', 'bienvenido', 'a', 'nuestra', 'tienda'];
-    console.log(mensajeBienvenida.length); // Muestra 5 
+    console.log(mensajeBienvenida.length); // Muestra 5 objetos
 
     mensajeBienvenida.pop();
 
-    console.log(mensajeBienvenida.length); // Muestra 4 debido a que estoy ejecutando el method pop()
+    console.log(mensajeBienvenida.length); // Muestra 4 objetos debido a que estoy ejecutando el method pop()
 
     mensajeBienvenida.push('tienda');
 
-    console.log(mensajeBienvenida.length); // Muestra 5 nuevamente porque agregue "tienda"
+    console.log(mensajeBienvenida.length); // Muestra 5 objetos nuevamente porque agregue "tienda" con el method push()
 
     mensajeBienvenida.push('de', 'tarjetas', 'de', 'regalo');
 
@@ -74,7 +74,6 @@ function mensaje() {
 
     console.log(mensajeBienvenida.join()) // Output del array en formato string
 }
-
 
 // ************************************************
 // Shopping Cart API
