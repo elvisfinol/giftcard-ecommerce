@@ -1,0 +1,68 @@
+{
+  "items": [
+    {
+      "sys": { "id": "1" },
+      "fields": {
+        "title": "amazon gift card",
+        "price": 10,
+        "image": { "fields": { "file": { "url": "./images/products/amz-gift-card.png" } } }
+      }
+    },
+    {
+      "sys": { "id": "2" },
+      "fields": {
+        "title": "amazon gift card",
+        "price": 25,
+        "image": { "fields": { "file": { "url": "./images/products/amz-gift-card.png" } } }
+      }
+    },
+    {
+      "sys": { "id": "3" },
+      "fields": {
+        "title": "amazon gift card",
+        "price": 50,
+        "image": { "fields": { "file": { "url": "./images/products/amz-gift-card.png" } } }
+      }
+    },
+    {
+      "sys": { "id": "4" },
+      "fields": {
+        "title": "amazon gift",
+        "price": 100,
+        "image": { "fields": { "file": { "url": "./images/products/amz-gift-card.png" } } }
+      }
+    },
+    {
+      "sys": { "id": "5" },
+      "fields": {
+        "title": "spotify gift card",
+        "price": 10,
+        "image": { "fields": { "file": { "url": "./images/products/spotify-gift-card.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "6" },
+      "fields": {
+        "title": "spotify gift card",
+        "price": 25,
+        "image": { "fields": { "file": { "url": "./images/products/spotify-gift-card.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "7" },
+      "fields": {
+        "title": "spotify gift card",
+        "price": 50,
+        "image": { "fields": { "file": { "url": "./images/products/spotify-gift-card.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "8" },
+      "fields": {
+        "title": "spotify gift card",
+        "price": 100,
+        "image": { "fields": { "file": { "url": "./images/products/spotify-gift-card.jpg" } } }
+      }
+    }
+  ]
+}
