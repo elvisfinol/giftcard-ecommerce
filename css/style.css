@@ -4,7 +4,7 @@
 
 
 :root {
-  --primaryColor: #d6e0f0;
+  --primaryColor: #06090D;
   --mainWhite: #fff;
   --mainBlack: #222;
   --mainGrey: #ececec;
@@ -49,10 +49,12 @@ body {
 
 .navbar-center h3 {
   font-weight: 200;
+  color: #f0a500;
 }
 
 .nav-icon {
   font-size: 1.5rem;
+  color: #f0a500;
 }
 
 .cart-btn {
@@ -64,10 +66,10 @@ body {
   position: absolute;
   top: -8px;
   right: -10px;
-  background: var(--mainBlack);
+  background: white;
   padding: 0 5px;
   border-radius: 30%;
-  color: var(--primaryColor);
+  color: black;
 }
 
 /* --------------- Hero ---------------- */
@@ -99,7 +101,7 @@ body {
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
   font-size: 1rem;
-  background: var(--primaryColor);
+  background: white;
   color: var(--mainBlack);
   border: 1px solid var(--primaryColor);
   transition: var(--mainTransition);
@@ -107,8 +109,8 @@ body {
 }
 
 .banner-btn:hover {
-  background: white;
-  color: var(--mainBlack);
+  background: black;
+  color: white;
 }
 
 /* --------------- End of Hero ---------------- */
@@ -119,7 +121,7 @@ body {
 /* --------------- Products ---------------- */
 
 .products {
-  padding: 4rem 0;
+  padding: 3rem 0;
 }
 
 .section-title h2 {
@@ -149,19 +151,19 @@ body {
   position: absolute;
   top: 70%;
   right: 0;
-  background: var(--primaryColor);
+  background: white;
   border: none;
   text-transform: uppercase;
   padding: 0.5rem 0.75rem;
   letter-spacing: var(--mainSpacing);
-  font-weight: bold;
+  font-weight: 100;
   transition: var(--mainTransition);
   transform: translateX(101%);
   cursor: pointer;
 }
 
 .bag-btn:hover {
-  color: var(--mainWhite);
+  color: black;
 }
 
 .fa-shopping-cart {
@@ -185,20 +187,58 @@ body {
 
 .product h3 {
   text-transform: capitalize;
-  font-size: 1.1rem;
-  margin-top: 0;
+  font-size: 1rem;
+  font-weight: 200;
+  margin-top: 1rem;
   letter-spacing: var(--mainSpacing);
   text-align: center;
 }
 
 .product h4 {
   margin-top: 0.7rem;
+  font-weight: bold;
   letter-spacing: var(--mainSpacing);
-  color: var(--mainBlack);
+  color: #f0a500;
   text-align: center;
 }
 
 /* ---------------End of Products ---------------- */
+
+/* ---------------- footer -------------------- */
+.footer {
+  padding: 15px;
+  text-align: center;
+  background-color: black;
+}
+
+.footer__coppy {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+.footer__coppy a {
+  color: white;
+
+}
+
+.footer__social a {
+  font-size: 2rem;
+  padding: 20px;
+  color: white;
+  margin: 0;
+}
+
+.footer__social a:hover {
+  color: white;
+}
+
+.footer__social a:hover {
+  background-color: white;
+  transition: 0.8s;
+}
+
+/* ---------------- end footer -------------------- */
+
 
 /* --------------- Cart ---------------- */
 .cart-overlay {
