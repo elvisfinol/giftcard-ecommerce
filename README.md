@@ -1,1 +1,1 @@
-## Para visualizar projecto haz click acá -> [🕹️](https://elvisfinol.github.io/proyecto-js/ "🕹️")
+## Para visualizar projecto haz click acá -> [🕹️](https://giftcard-ecommerce.netlify.app "🕹️")
