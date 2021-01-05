@@ -47,9 +47,10 @@ body {
   padding: 0 1.5rem;
 }
 
-.navbar-center h3 {
+.navbar-center h3 a {
   font-weight: 200;
   color: #f0a500;
+  text-decoration: none;
 }
 
 .nav-icon {

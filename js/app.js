@@ -9,12 +9,14 @@ const clearCartBtn = document.querySelector('clear-cart');
 const cartDOM = document.querySelector('.cart');
 const cartOverlay = document.querySelector('cart-overlay');
 const cartItems = document.querySelector('.cart-items');
-const cartTotal = document.querySelector('cart-total')
+const cartTotal = document.querySelector('.cart-total');
 const cartContent = document.querySelector('cart-content');
 const productsDOM = document.querySelector('.products-center');
 
 // Carrito
-let cart = []
+let cart = [];
+// botones
+let buttonsDOM = []
 
 // Clase para obtener productos
 // Las clases son "funciones especiales"
@@ -64,16 +66,65 @@ class UI {
     });
     productsDOM.innerHTML = result;
     }
-}
+    getBagButtons(){
+        let buttons = [...document.querySelectorAll(".bag-btn")];
+        buttonsDOM = buttons;
+        buttons.forEach(button => {
+            let id = button.dataset.id;
+            let inCart = cart.find(item => item.id === id);
+
+            if(inCart) {
+                button.innerText = "En el carrito";
+                button.disabled = true;
+            }
+            // Desafio Clase 9 - Incorporar eventos
+                button.addEventListener('click', (event) => {
+                    // Deshabilitar boton
+                    event.target.innerText = "En el carrito";
+                    event.target.disabled = true;
+                    // Metodos a crear
+                    // Obtener producto desde Productos
+                    let cartItem = {...Storage.getProduct(id), amount:1};
+                    // Agregar producto al carrito
+                    cart = [...cart,cartItem];
+                    // Guardar carrito en el local storage
+                    Storage.saveCart(cart);
+                    // Setear valores del carrito 
+                    this.setCartValues(cart);
+                    // Mostrar los items del carrito
+                    // Mostrar el carrito
+                });
+            });
+        }
+        setCartValues(cart) {
+            let tempTotal = 0;
+            let itemsTotal = 0;
+            cart.map(item => {
+            tempTotal += item.price * item.amount;
+            itemsTotal += item.amount;
+            });
+            cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
+            cartItems.innerText = itemsTotal;
+            console.log(cartTotal, cartItems);
+        }
+    }
 
 // Clase de Storage Local
 class Storage {
     static saveProducts(products) {
         localStorage.setItem("products", JSON.stringify(products));
     }
+    static getProduct(id) {
+        let products = JSON.parse(localStorage.getItem('products'));
+        return products.find(product => product.id === id);
+    }
+    static saveCart() {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
 }
 
 // Eventos - Desde aca traemos los objetos
+// Espera que cargue solo el HTML, no incluye hojas de estilo
 document.addEventListener("DOMContentLoaded", () => {
     const ui = new UI();
     const products = new Products();
@@ -82,86 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
     products.getProducts().then(products => {
         ui.displayProducts(products);
         Storage.saveProducts(products);
-    })
+    }).then(() => {
+        ui.getBagButtons();
+    });
 })
 
-
-//----------------------------------------------------------------------------------------------------------//
-
-
-//////////////////////////// DESAFIO 4 //////////////////////////// 
-
-
-function marcoTemporal() {
-
-    let miNombre = prompt('Escribe tu nombre');
-    let marcoTemporal = prompt('En que año naciste?. Ingresa un valor comprendido entre 1930 y 2010');
-
-    if (marcoTemporal >= 1930 && marcoTemporal<= 1948) {
-        alert(`${miNombre}: eres de la generacion Silent Generation`);
-    }
-
-    else if (marcoTemporal >= 1949 && marcoTemporal <= 1968) {
-        alert(`${miNombre}: eres de la generacion Baby Boom`);
-    }
-
-    else if (marcoTemporal >= 1969 && marcoTemporal <= 1980) {
-        alert(`${miNombre}: eres de la generacion X`);
-    }
-
-    else if (marcoTemporal >= 1981 && marcoTemporal <= 1993) {
-        alert(`${miNombre}: eres de la generacion Y - Millennials`);
-    }
-
-    else if (marcoTemporal >= 1994 && marcoTemporal <= 2010) {
-        alert(`${miNombre}: eres de la generacion Z`);
-
-    }
-}
-
-//////////////////////////// DESAFIO 5 - Objects //////////////////////////// 
-
-function crearObjetoSpotify(correoSP, nombreSP, contrasenaSP) {
-    this.correoSpotify = correoSP;
-    this.nombreSpotify = nombreSP;
-    this.contrasenaSpotify = contrasenaSP;
-    this.mostrarCuenta = function () {
-        let mensajeBienvenida = 'Gracias por registrarte a Spotify, ahora podras escuchar toda la musica que quieras: \n' +
-                                'Tu correo es: ' + this.correoSpotify +
-                                '\nTu nombre es: ' + this.nombreSpotify +
-                                '\nTu contraseña quedo como: ' + this.contrasenaSpotify;
-                                alert(mensajeBienvenida);
-                                } 
-}
-function crearCuentaSpotify() {
-    let correo = prompt('Ingresa de correo electronico');
-    let nombre = prompt('Ingresa tu nombre');
-    let contrasena = prompt('Ingresa tu contraseña');
-
-    let cuentaSpotify = new crearObjetoSpotify(correo, nombre, contrasena);
-    cuentaSpotify.mostrarCuenta();
-}
-
-
-//////////////////////////// DESAFIO 6 - Uso de arrays //////////////////////////// 
-
-function mensaje() {
-    let mensajeBienvenida = ['Hola', 'bienvenido', 'a', 'nuestra', 'tienda'];
-    console.log(mensajeBienvenida.length); // Muestra 5 objetos
-
-    mensajeBienvenida.pop();
-
-    console.log(mensajeBienvenida.length); // Muestra 4 objetos debido a que estoy ejecutando el method pop()
-
-    mensajeBienvenida.push('tienda');
-
-    console.log(mensajeBienvenida.length); // Muestra 5 objetos nuevamente porque agregue "tienda" con el method push()
-
-    mensajeBienvenida.push('de', 'tarjetas', 'de', 'regalo');
-
-    mensajeBienvenida[1] = 'bienvenid@s'; // Cambio el valor de "Bienvenido" por "Bienvenid@s"
-
-    console.log(mensajeBienvenida); // Output del array 
-
-    console.log(mensajeBienvenida.join()) // Output del array en formato string
-}
