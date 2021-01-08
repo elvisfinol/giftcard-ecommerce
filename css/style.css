@@ -29,7 +29,7 @@ body {
 .navbar {
   position: sticky;
   top: 0;
-  height: 60px;
+  height: 80px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -43,7 +43,7 @@ body {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 0 1.5rem;
 }
 
@@ -87,12 +87,13 @@ body {
   text-align: center;
   background: rgba(255, 255, 255, 0.8);
   display: inline-block;
-  padding: 2rem;
+  padding: 4rem;
+  border-radius: 10px;
 }
 
 .banner-title {
   font-size: 3.4rem;
-  font-weight: 200;
+  font-weight: 100;
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing) margin-bottom: 3rem;
 }
@@ -101,17 +102,20 @@ body {
   padding: 1rem 3rem;
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
+  font-weight: 100;
   font-size: 1rem;
   background: white;
   color: var(--mainBlack);
-  border: 1px solid var(--primaryColor);
   transition: var(--mainTransition);
   cursor: pointer;
+  border-radius: 30px;
+  text-decoration: none;
 }
 
 .banner-btn:hover {
-  background: black;
-  color: white;
+  background: #f0a500;
+  color: black;
+
 }
 
 /* --------------- End of Hero ---------------- */
@@ -207,7 +211,7 @@ body {
 
 /* ---------------- footer -------------------- */
 .footer {
-  padding: 15px;
+  padding: 30px;
   text-align: center;
   background-color: black;
 }
@@ -215,6 +219,10 @@ body {
 .footer__coppy {
   color: white;
   font-family: 'Raleway', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
 }
 
 .footer__coppy a {
@@ -226,7 +234,6 @@ body {
   font-size: 2rem;
   padding: 20px;
   color: white;
-  margin: 0;
 }
 
 .footer__social a:hover {
