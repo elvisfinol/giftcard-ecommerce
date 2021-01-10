@@ -58,12 +58,12 @@ body {
   color: #f0a500;
 }
 
-.cart-btn {
+.carrito-btn {
   position: relative;
   cursor: pointer;
 }
 
-.cart-items {
+.carrito-items {
   position: absolute;
   top: -8px;
   right: -10px;
@@ -115,7 +115,6 @@ body {
 .banner-btn:hover {
   background: #f0a500;
   color: black;
-
 }
 
 /* --------------- End of Hero ---------------- */
@@ -137,7 +136,7 @@ body {
   letter-spacing: var(--mainSpacing);
 }
 
-.products-center {
+.productos-center {
   width: 90vw;
   margin: 0 auto;
   max-width: 1170px;
@@ -154,21 +153,21 @@ body {
 
 .bag-btn {
   position: absolute;
-  top: 70%;
-  right: 0;
-  background: white;
+  bottom: 0%;
+  background: gold;
   border: none;
   text-transform: uppercase;
   padding: 0.5rem 0.75rem;
   letter-spacing: var(--mainSpacing);
-  font-weight: 100;
+  font-weight: 400;
   transition: var(--mainTransition);
-  transform: translateX(101%);
   cursor: pointer;
+  border-top-right-radius: 20px;
 }
 
 .bag-btn:hover {
   color: black;
+  font-weight: bold;
 }
 
 .fa-shopping-cart {
@@ -187,10 +186,10 @@ body {
 }
 
 .img-container:hover .product-img {
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
-.product h3 {
+.producto h3 {
   text-transform: capitalize;
   font-size: 1rem;
   font-weight: 200;
@@ -199,7 +198,7 @@ body {
   text-align: center;
 }
 
-.product h4 {
+.producto h4 {
   margin-top: 0.7rem;
   font-weight: bold;
   letter-spacing: var(--mainSpacing);
@@ -249,7 +248,7 @@ body {
 
 
 /* --------------- Cart ---------------- */
-.cart-overlay {
+.carrito-overlay {
   position: fixed;
   top: 0;
   right: 0;
@@ -261,7 +260,7 @@ body {
   visibility: hidden;
 }
 
-.cart {
+.carrito {
   position: fixed;
   top: 0;
   right: 0;
@@ -284,18 +283,18 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .cart {
+  .carrito {
     width: 30vw;
     min-width: 450px;
   }
 }
 
-.close-cart {
+.cierre-carrito {
   font-size: 1.7rem;
   cursor: pointer;
 }
 
-.cart h2 {
+.carrito h2 {
   text-transform: capitalize;
   text-align: center;
   letter-spacing: var(--mainSpacing);
@@ -303,7 +302,7 @@ body {
 }
 
 /*---------- Cart Item -------------------- */
-.cart-item {
+.carrito-item {
   display: grid;
   align-items: center;
   grid-template-columns: auto 1fr auto;
@@ -311,18 +310,18 @@ body {
   margin: 1.5rem 0;
 }
 
-.cart-item img {
+.carrito-item img {
   width: 75px;
   height: 75px;
 }
 
-.cart-item h4 {
+.carrito-item h4 {
   font-size: 0.85rem;
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
 }
 
-.cart-item h5 {
+.carrito-item h5 {
   margin: 0.5rem 0;
   letter-spacing: var(--mainSpacing);
 }
@@ -345,13 +344,13 @@ body {
 /*---------- End of Cart Item -------------------- */
 
 
-.cart-footer {
+.carrito-footer {
   margin-top: 2rem;
   letter-spacing: var(--mainSpacing);
   text-align: center;
 }
 
-.cart-footer h3 {
+.carrito-footer h3 {
   text-transform: capitalize;
   margin-bottom: 1rem;
 }
