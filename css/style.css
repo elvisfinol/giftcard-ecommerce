@@ -147,7 +147,7 @@ body {
 .productos-center {
   width: 100vw;
   margin: 0 auto;
-  max-width: 1170px;
+  max-width: 970px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   grid-column-gap: 1.5rem;
