@@ -47,7 +47,6 @@ class UI {
     let resultado = '';
     productos.forEach(producto => {
         resultado += `
-        <!-- single product -->
             <article class="producto">
                 <div class="img-container">
                     <img src=${producto.image} alt="product" class="product-img">
@@ -59,17 +58,52 @@ class UI {
                 <h3>${producto.title}</h3>
                 <h4>$${producto.price}</h4>
             </article>
-        <!--end single product-->
         `
     });
     productosDOM.innerHTML = resultado;
     }
-    obtenerBtnsCarrito() {
-        // Utilizacion de Spread Operator
-        const botonesCarrito = [...document.querySelectorAll(".bag-btn")];
-        console.log(botonesCarrito);
+    getBagButtons(){
+        let buttons = [...document.querySelectorAll(".bag-btn")];
+        botonesDOM = buttons;
+        buttons.forEach(button => {
+            let id = button.dataset.id;
+            let enCarrito = carrito.find(item => item.id === id);
+
+            if(enCarrito) {
+                button.innerText = "En el carrito";
+                button.disabled = true;
+            }
+            // Desafio Clase 9 - Incorporar eventos
+                button.addEventListener('click', (event) => {
+                    // Deshabilitar boton
+                    event.target.innerText = "En el carrito";
+                    event.target.disabled = true;
+                    // Metodos a crear
+                    // Obtener producto desde Productos
+                    let carritoItems = {...Storage.getProduct(id), amount:1};
+                    // Agregar producto al carrito
+                    carrito = [...carrito,carritoItems];
+                    // Guardar carrito en el local storage
+                    Storage.saveCart(carrito);
+                    // Setear valores del carrito 
+                    this.setCartValues(carrito);
+                    // Mostrar los items del carrito
+                    // Mostrar el carrito
+                });
+            });
+        }
+        setCartValues(carrito) {
+            let tempTotal = 0;
+            let itemsTotal = 0;
+            carrito.map(item => {
+            tempTotal += item.price * item.amount;
+            itemsTotal += item.amount;
+            });
+            carritoTotal.innerText = parseFloat(tempTotal.toFixed(2));
+            carritoItems.innerText = itemsTotal;
+        }
     }
-}
+
 
 // Local Storage
 // Storage Method. Usando un metodo Static no tengo que llamar la instancia de la clase
@@ -77,9 +111,12 @@ class Storage {
     static guardarProductos(productos) {
         localStorage.setItem("productos", JSON.stringify(productos));
     }
-    static obtenerProducto(id){
+    static getProduct(id) {
         let productos = JSON.parse(localStorage.getItem('productos'));
-        return productos.find( producto => producto.id === id);
+        return productos.find(producto => producto.id === id);
+    }
+        static saveCart() {
+        localStorage.setItem('carrito', JSON.stringify(carrito));
     }
 }
 
@@ -95,6 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ui.mostrarProductos(productos);
     Storage.guardarProductos(productos);
     }).then(() => {
-        ui.obtenerBtnsCarrito();
+        ui.getBagButtons();
     });
 });

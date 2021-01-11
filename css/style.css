@@ -165,17 +165,20 @@ body {
   background: gold;
   border: none;
   text-transform: uppercase;
-  padding: 0.5rem 0.75rem;
+  padding: 1.5rem 1.5rem;
   letter-spacing: var(--mainSpacing);
-  font-weight: 400;
+  font-weight: 300;
   transition: var(--mainTransition);
   cursor: pointer;
   border-top-right-radius: 20px;
 }
 
 .bag-btn:hover {
-  color: black;
-  font-weight: bold;
+  color: white;
+  transform: scale(1.4);
+  z-index: 1000;
+  background: #404040;
+  opacity: 1;
 }
 
 .fa-shopping-cart {
@@ -195,10 +198,6 @@ body {
   border-top-right-radius: 60px;
 
 
-}
-
-.img-container:hover .product-img {
-  opacity: 0.4;
 }
 
 .producto h3 {
