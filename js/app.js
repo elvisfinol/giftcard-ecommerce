@@ -16,7 +16,7 @@ const productosDOM = document.querySelector('.productos-center');
 // Carrito
 let carrito = [];
 // botones
-let buttonsDOM = []
+let botonesDOM = [];
 
 // Clase creada para para obtener productos con la fetch API al archivo JSON.
 // Las clases son "funciones especiales"
@@ -64,19 +64,28 @@ class UI {
     });
     productosDOM.innerHTML = resultado;
     }
+    obtenerBtnsCarrito() {
+        // Utilizacion de Spread Operator
+        const botonesCarrito = [...document.querySelectorAll(".bag-btn")];
+        console.log(botonesCarrito);
+    }
 }
 
+// Local Storage
 // Storage Method. Usando un metodo Static no tengo que llamar la instancia de la clase
 class Storage {
     static guardarProductos(productos) {
         localStorage.setItem("productos", JSON.stringify(productos));
+    }
+    static obtenerProducto(id){
+        let productos = JSON.parse(localStorage.getItem('productos'));
+        return productos.find( producto => producto.id === id);
     }
 }
 
 // EventListener
 // Desde aca llamamos a los metodos
 // Nota: no se incluye instancia de Storage class para usar Static Method
-
 document.addEventListener("DOMContentLoaded", () => {
     const ui = new UI();
     const productos = new Productos();
@@ -85,5 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     productos.obtenerProductos().then(productos => {
     ui.mostrarProductos(productos);
     Storage.guardarProductos(productos);
+    }).then(() => {
+        ui.obtenerBtnsCarrito();
     });
 });
