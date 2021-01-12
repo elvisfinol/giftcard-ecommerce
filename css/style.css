@@ -95,6 +95,8 @@ body {
   display: inline-block;
   padding: 4rem;
   border-radius: 10px;
+  margin: 40px;
+  padding: 40px;
 }
 
 .banner-title {
@@ -145,7 +147,7 @@ body {
 }
 
 .productos-center {
-  width: 100vw;
+  width: 70vw;
   margin: 0 auto;
   max-width: 970px;
   display: grid;
@@ -165,7 +167,7 @@ body {
   background: gold;
   border: none;
   text-transform: uppercase;
-  padding: 1.5rem 1.5rem;
+  padding: 1rem 1rem;
   letter-spacing: var(--mainSpacing);
   font-weight: 300;
   transition: var(--mainTransition);

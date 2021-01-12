@@ -62,7 +62,7 @@ class UI {
     });
     productosDOM.innerHTML = resultado;
     }
-    getBagButtons(){
+    bagBoton(){
         let buttons = [...document.querySelectorAll(".bag-btn")];
         botonesDOM = buttons;
         buttons.forEach(button => {
@@ -80,19 +80,19 @@ class UI {
                     event.target.disabled = true;
                     // Metodos a crear
                     // Obtener producto desde Productos
-                    let carritoItems = {...Storage.getProduct(id), amount:1};
+                    let carritoItems = {...Storage.obtenerProducto(id), amount:1};
                     // Agregar producto al carrito
                     carrito = [...carrito,carritoItems];
                     // Guardar carrito en el local storage
-                    Storage.saveCart(carrito);
+                    Storage.guardarCarrito(carrito);
                     // Setear valores del carrito 
-                    this.setCartValues(carrito);
+                    this.seteoCarritoValores(carrito);
                     // Mostrar los items del carrito
                     // Mostrar el carrito
                 });
             });
         }
-        setCartValues(carrito) {
+        seteoCarritoValores(carrito) {
             let tempTotal = 0;
             let itemsTotal = 0;
             carrito.map(item => {
@@ -111,11 +111,11 @@ class Storage {
     static guardarProductos(productos) {
         localStorage.setItem("productos", JSON.stringify(productos));
     }
-    static getProduct(id) {
+    static obtenerProducto(id) {
         let productos = JSON.parse(localStorage.getItem('productos'));
         return productos.find(producto => producto.id === id);
     }
-        static saveCart() {
+        static guardarCarrito() {
         localStorage.setItem('carrito', JSON.stringify(carrito));
     }
 }
@@ -132,6 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ui.mostrarProductos(productos);
     Storage.guardarProductos(productos);
     }).then(() => {
-        ui.getBagButtons();
+        ui.bagBoton();
     });
 });
