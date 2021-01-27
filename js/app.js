@@ -88,6 +88,7 @@ class UI {
                     // Setear valores del carrito 
                     this.seteoCarritoValores(carrito);
                     // Mostrar los items del carrito
+                    this.agregarCarritoItem(carritoItems);
                     // Mostrar el carrito
                 });
             });
@@ -96,11 +97,26 @@ class UI {
             let tempTotal = 0;
             let itemsTotal = 0;
             carrito.map(item => {
-            tempTotal += item.price * item.amount;
-            itemsTotal += item.amount;
+                tempTotal += item.price * item.amount;
+                itemsTotal += item.amount;
             });
             carritoTotal.innerText = parseFloat(tempTotal.toFixed(2));
             carritoItems.innerText = itemsTotal;
+        }
+        agregarCarritoItem(item) {
+            const div = document.createElement('div');
+            div.classList.add('carrito-items');
+            div.innerHTML = `<img src="/images/products/spotify-gift-card.jpg" alt="">
+                    <div>
+                        <h4>Spotify Card</h4>
+                        <h5>$ 10 </h5>
+                        <span class="remove-item">remove</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-chevron-up"></i>
+                        <p class="item-amount">2</p>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>`
         }
     }
 
@@ -115,7 +131,7 @@ class Storage {
         let productos = JSON.parse(localStorage.getItem('productos'));
         return productos.find(producto => producto.id === id);
     }
-        static guardarCarrito() {
+        static guardarCarrito(carrito) {
         localStorage.setItem('carrito', JSON.stringify(carrito));
     }
 }
