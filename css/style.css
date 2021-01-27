@@ -224,7 +224,7 @@ body {
   height: 100%;
   overflow: scroll;
   z-index: 3;
-  background: rgb(231, 226, 221);
+  background: #ffffff;
   padding: 1.5rem;
   transition: var(--mainTransition);
   transform: translateX(100%);
@@ -255,6 +255,28 @@ body {
   text-align: center;
   letter-spacing: var(--mainSpacing);
   margin-bottom: 2rem;
+  font-weight: 200;
+}
+
+#clearCartBtn {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-weight: 100;
+  font-size: 1.5rem;
+  border: 1px solid #c6c6c6;
+  background: rgb(255, 255, 255);
+  color: var(--mainBlack);
+  transition: var(--mainTransition);
+  cursor: pointer;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+#clearCartBtn:hover {
+  background: #ffd26b;
+  color: black;
+
 }
 
 /*---------- Cart Item -------------------- */
@@ -273,11 +295,13 @@ body {
 
 .cart-item h4 {
   font-size: 0.85rem;
+  font-weight: 100;
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
 }
 
 .cart-item h5 {
+  color: #f0a500;
   margin: 0.5rem 0;
   letter-spacing: var(--mainSpacing);
 }
@@ -308,6 +332,8 @@ body {
 .cart-footer h3 {
   text-transform: capitalize;
   margin-bottom: 1rem;
+  color: #f0a500;
+
 }
 
 /* --------------- End of Cart ---------------- */
