@@ -74,22 +74,17 @@ class UI {
         button.addEventListener('click', (e) => {
             e.target.innerText = 'En el carrito';
             e.target.disabled = true;
-            // get product from products
-            let cartItem = {
-            ...Storage.getProduct(id),
-            amount: 1
-            };
+            // Obtener producto desde Productos
+            let cartItem = {...Storage.getProduct(id), amount: 1};
             console.log(cartItem);
-            // add product to cart
+            // Agregar producto al carrito
             cart = [...cart, cartItem];
-            // save cart in local storage
+            // Guardar carrito en el Local Storage
             Storage.saveCart(cart);
-            // set cart values 
+            // Seteo de valores del carrito
             this.setCartValues(cart);
-            // display cart item
+            // Mostrar los items del carrito
             this.addCartItem(cartItem);
-            // show cart
-            this.showCart();
         });
         });
     }
@@ -138,12 +133,12 @@ class UI {
     };
     cartLogic() {
 
-    // clear cart button
+    // Limpiar carrito
     clearCartBtn.addEventListener('click', () => {
         this.clearCart();
     });
 
-    // cart functionality
+    // Carrito funcionalidad
     cartContent.addEventListener('click', (e) => {
         if (e.target.classList.contains('remove-item')) {
             let removeItem = e.target;
@@ -217,9 +212,9 @@ class Storage {
 document.addEventListener('DOMContentLoaded', () => {
     const ui = new UI();
     const products = new Products();
-    // setup app
+    // Setup App
     ui.setupAPP();
-    // get all products
+    // Obtener productos
     products.getProducts().then(products => {
         ui.displayProducts(products);
         Storage.saveProducts(products);
