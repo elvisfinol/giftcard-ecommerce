@@ -205,7 +205,7 @@ body {
 /* ---------------End of Products ---------------- */
 /* --------------- Cart ---------------- */
 .cart-overlay {
-  position: fixed;
+  position: static;
   top: 0;
   right: 0;
   width: 100%;
@@ -227,7 +227,7 @@ body {
   background: #ffffff;
   padding: 1.5rem;
   transition: var(--mainTransition);
-  transform: translateX(100%);
+  transform: translateY(100%);
 }
 
 .showCart {
@@ -246,6 +246,9 @@ body {
 }
 
 .close-cart {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
   font-size: 1.7rem;
   cursor: pointer;
 }
@@ -358,6 +361,7 @@ body {
 
 .footer__coppy a {
   color: white;
+  text-decoration: none;
 
 }
 
