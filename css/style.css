@@ -6,7 +6,7 @@
   --mainBlack: #222;
   --mainGrey: #ececec;
   --mainSpacing: 0.1rem;
-  --mainTransition: all 0.3s linear;
+  --mainTransition: all 0.4s linear;
 }
 
 * {
@@ -204,7 +204,7 @@ body {
 
 /* ---------------End of Products ---------------- */
 /* --------------- Cart ---------------- */
-.cart-overlay {
+/* .cart-overlay {
   position: static;
   top: 0;
   right: 0;
@@ -214,18 +214,20 @@ body {
   background: rgba(245, 245, 245, 0.5);
   z-index: 2;
   visibility: hidden
-}
+} */
 
 .cart {
   position: fixed;
   top: 0;
-  right: 0;
-  width: 100%;
+  right: 1%;
+  margin: 100px 0;
+  width: 0;
   height: 100%;
+  border-radius: 10px;
   overflow: scroll;
   z-index: 3;
   background: #ffffff;
-  padding: 1.5rem;
+  padding: 2.5rem;
   transition: var(--mainTransition);
   transform: translateY(100%);
 }
