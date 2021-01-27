@@ -1,7 +1,4 @@
-/*--------------- SETUP CSS ---------------*/
-
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 
 :root {
   /* --primaryColor: #06090D; */
@@ -23,7 +20,6 @@ body {
   background: var(--mainWhite);
   font-family: 'Raleway', sans-serif;
 }
-
 
 /* --------------- Navbar ---------------- */
 .navbar {
@@ -61,14 +57,15 @@ body {
 .nav-icon {
   font-size: 1.5rem;
   color: #f0a500;
+
 }
 
-.carrito-btn {
+.cart-btn {
   position: relative;
   cursor: pointer;
 }
 
-.carrito-items {
+.cart-items {
   position: absolute;
   top: -8px;
   right: -10px;
@@ -78,8 +75,8 @@ body {
   color: white;
 }
 
+/* --------------- End of Navbar ---------------- */
 /* --------------- Hero ---------------- */
-
 .hero {
   min-height: calc(70vh - 60px);
   /* background: url("https://previews.123rf.com/images/dennizn/dennizn2005/dennizn200500278/147690312-montreal-canada-april-6-2020-different-gift-cards-of-many-brands-such-as-amazon-netflix-xbox-google-.jpg") center/cover no-repeat; */
@@ -126,27 +123,15 @@ body {
 }
 
 /* --------------- End of Hero ---------------- */
-
-
-
-
 /* --------------- Products ---------------- */
 
 .products {
   padding: 3rem 0;
   background: url("https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") center/cover no-repeat;
-
 }
 
-.section-title h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 5rem;
-  text-transform: capitalize;
-  letter-spacing: var(--mainSpacing);
-}
 
-.productos-center {
+.products-center {
   width: 70vw;
   margin: 0 auto;
   max-width: 970px;
@@ -198,11 +183,9 @@ body {
   transition: var(--mainTransition);
   border-radius: 10px;
   border-top-right-radius: 60px;
-
-
 }
 
-.producto h3 {
+.product h3 {
   text-transform: capitalize;
   font-size: 1rem;
   font-weight: 200;
@@ -211,7 +194,7 @@ body {
   text-align: center;
 }
 
-.producto h4 {
+.product h4 {
   margin-top: 0.7rem;
   font-weight: bold;
   letter-spacing: var(--mainSpacing);
@@ -220,6 +203,116 @@ body {
 }
 
 /* ---------------End of Products ---------------- */
+/* --------------- Cart ---------------- */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  transition: var(--mainTransition);
+  background: rgba(245, 245, 245, 0.5);
+  z-index: 2;
+  visibility: hidden
+}
+
+.cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  z-index: 3;
+  background: rgb(231, 226, 221);
+  padding: 1.5rem;
+  transition: var(--mainTransition);
+  transform: translateX(100%);
+}
+
+.showCart {
+  transform: translateX(0);
+}
+
+.transparentBcg {
+  visibility: visible;
+}
+
+@media screen and (min-width: 768px) {
+  .cart {
+    width: 30vw;
+    min-width: 450px;
+  }
+}
+
+.close-cart {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.cart h2 {
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 2rem;
+}
+
+/*---------- Cart Item -------------------- */
+.cart-item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.cart-item img {
+  width: 75px;
+  height: 75px;
+}
+
+.cart-item h4 {
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+
+.cart-item h5 {
+  margin: 0.5rem 0;
+  letter-spacing: var(--mainSpacing);
+}
+
+.item-amount {
+  text-align: center;
+}
+
+.remove-item {
+  color: grey;
+  cursor: pointer;
+}
+
+.fa-chevron-up,
+.fa-chevron-down {
+  color: var(--mainBlack);
+  cursor: pointer;
+}
+
+/*---------- End of Cart Item -------------------- */
+
+.cart-footer {
+  margin-top: 2rem;
+  letter-spacing: var(--mainSpacing);
+  text-align: center;
+}
+
+.cart-footer h3 {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+/* --------------- End of Cart ---------------- */
+
+
 
 /* ---------------- footer -------------------- */
 .footer {
@@ -258,114 +351,3 @@ body {
 }
 
 /* ---------------- end footer -------------------- */
-
-
-/* --------------- Cart ---------------- */
-.carrito-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  transition: var(--mainTransition);
-  background: rgba(245, 245, 245, 0.5);
-  z-index: 2;
-  visibility: hidden;
-}
-
-.carrito {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-  z-index: 3;
-  background: rgb(231, 226, 221);
-  padding: 1.5rem;
-  transition: var(--mainTransition);
-  transform: translateX(100%);
-}
-
-.showCart {
-  transform: translateX(0);
-}
-
-.transparentBcg {
-  visibility: visible;
-}
-
-@media screen and (min-width: 768px) {
-  .carrito {
-    width: 30vw;
-    min-width: 450px;
-  }
-}
-
-.cierre-carrito {
-  font-size: 1.7rem;
-  cursor: pointer;
-}
-
-.carrito h2 {
-  text-transform: capitalize;
-  text-align: center;
-  letter-spacing: var(--mainSpacing);
-  margin-bottom: 2rem;
-}
-
-/*---------- Cart Item -------------------- */
-.carrito-item {
-  display: grid;
-  align-items: center;
-  grid-template-columns: auto 1fr auto;
-  grid-column-gap: 1.5rem;
-  margin: 1.5rem 0;
-}
-
-.carrito-item img {
-  width: 75px;
-  height: 75px;
-}
-
-.carrito-item h4 {
-  font-size: 0.85rem;
-  text-transform: capitalize;
-  letter-spacing: var(--mainSpacing);
-}
-
-.carrito-item h5 {
-  margin: 0.5rem 0;
-  letter-spacing: var(--mainSpacing);
-}
-
-.item-amount {
-  text-align: center;
-}
-
-.remove-item {
-  color: grey;
-  cursor: pointer;
-}
-
-.fa-chevron-up,
-.fa-chevron-down {
-  color: var(--mainBlack);
-  cursor: pointer;
-}
-
-/*---------- End of Cart Item -------------------- */
-
-
-.carrito-footer {
-  margin-top: 2rem;
-  letter-spacing: var(--mainSpacing);
-  text-align: center;
-}
-
-.carrito-footer h3 {
-  text-transform: capitalize;
-  margin-bottom: 1rem;
-}
-
-/* --------------- End of Cart ---------------- */
