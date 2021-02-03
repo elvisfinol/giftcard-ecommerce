@@ -9,8 +9,7 @@
         console.log(formulario.value);
         }
 
-
-    boton.addEventListener('click', filtrar);
+    formulario.addEventListener('keyup', filtrar);
 
 
 
@@ -29,6 +28,7 @@ const cartItems = document.querySelector('.cart-items');
 const cartTotal = document.querySelector('.cart-total');
 const cartContent = document.querySelector('.cart-content');
 const productsDOM = document.querySelector('.products-center');
+const buyBtn = document.querySelector('buyBtn');
 
 // Carrito
 let cart = [];
