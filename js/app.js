@@ -2,10 +2,6 @@
 /******************* Buscador ****************/
 /*********************************************/
 
-    const productos = [
-        {nombre: 'Platanos', Valor: 500}
-    ]
-
     const formulario = document.querySelector('#formulario');
     const boton = document.querySelector('#boton');
 
