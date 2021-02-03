@@ -123,6 +123,67 @@ body {
 }
 
 /* --------------- End of Hero ---------------- */
+
+/*************************************************************************************/
+
+@import url(https://use.fontawesome.com/releases/v5.15.2/css/all.css);
+
+/* social */
+[class*="social-"]:before {
+  font-family: "entypo", sans-serif;
+}
+
+#sticky-social {
+  position: fixed;
+  z-index: 1;
+  margin-top: 250px;
+  top: 0;
+  right: 0;
+}
+
+#sticky-social ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#sticky-social a {
+  background: #333;
+  color: #fff;
+  display: block;
+  height: 55px;
+  font: 20px "Open Sans", sans-serif;
+  line-height: 50px;
+  position: relative;
+  text-align: center;
+  width: 50px;
+}
+
+#sticky-social a[class*="facebook"] {
+  background: #3b5998;
+}
+
+#sticky-social a[class*="facebook"]:hover {
+  background: #5e91ff;
+}
+
+#sticky-social a[class*="whatsapp"] {
+  background: #00bb2d;
+}
+
+#sticky-social a[class*="whatsapp"]:hover {
+  background: #01f33a;
+}
+
+#sticky-social a[class*="instagram"] {
+  background: #b24ef5;
+}
+
+#sticky-social a[class*="instagram"]:hover {
+  background: #833AB4;
+}
+
+
 /* --------------- Products ---------------- */
 
 .products {
@@ -204,32 +265,30 @@ body {
 
 /* ---------------End of Products ---------------- */
 /* --------------- Cart ---------------- */
-/* .cart-overlay {
-  position: static;
+.cart-overlay {
+  position: fixed;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
   transition: var(--mainTransition);
-  background: rgba(245, 245, 245, 0.5);
   z-index: 2;
-  visibility: hidden
-} */
+  visibility: hidden;
+}
 
 .cart {
   position: fixed;
   top: 0;
   right: 0;
-  margin: 200px 0;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
   overflow: scroll;
   z-index: 3;
   background: #ffffff;
-  padding: 2.5rem;
+  padding: 1.5rem;
   transition: var(--mainTransition);
   transform: translateY(100%);
+  border: #222 solid 0.1px;
 }
 
 .showCart {
@@ -263,13 +322,33 @@ body {
   font-weight: 200;
 }
 
-#clearCartBtn {
-  padding: 1rem 3rem;
+.buyBtn {
+  padding: 1.5rem 5rem;
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
   font-weight: 100;
   font-size: 1.5rem;
   border: 1px solid #c6c6c6;
+  background: #ffca56;
+  color: var(--mainBlack);
+  transition: var(--mainTransition);
+  cursor: pointer;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.buyBtn:hover {
+  background: #e9a300;
+  color: black;
+
+}
+
+#clearCartBtn {
+  padding: 1rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-weight: 100;
+  font-size: 0.7rem;
   background: rgb(255, 255, 255);
   color: var(--mainBlack);
   transition: var(--mainTransition);
@@ -279,8 +358,8 @@ body {
 }
 
 #clearCartBtn:hover {
-  background: #ffd26b;
-  color: black;
+  background: #000000;
+  color: white;
 
 }
 
