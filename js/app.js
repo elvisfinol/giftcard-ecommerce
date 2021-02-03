@@ -1,4 +1,24 @@
 /*********************************************/
+/******************* Buscador ****************/
+/*********************************************/
+
+    const productos = [
+        {nombre: 'Platanos', Valor: 500}
+    ]
+
+    const formulario = document.querySelector('#formulario');
+    const boton = document.querySelector('#boton');
+
+        const filtrar = () => {
+        console.log(formulario.value);
+        }
+
+
+    boton.addEventListener('click', filtrar);
+
+
+
+/*********************************************/
 /************** Carrito De Compras ***********/
 /*********************************************/
 
@@ -223,3 +243,4 @@ document.addEventListener('DOMContentLoaded', () => {
         ui.cartLogic();
     });
 });
+
