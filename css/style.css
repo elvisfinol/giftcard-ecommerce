@@ -78,7 +78,7 @@ body {
 /* --------------- End of Navbar ---------------- */
 /* --------------- Hero ---------------- */
 .hero {
-  min-height: calc(70vh - 60px);
+  min-height: calc(70vh - 150px);
   /* background: url("https://previews.123rf.com/images/dennizn/dennizn2005/dennizn200500278/147690312-montreal-canada-april-6-2020-different-gift-cards-of-many-brands-such-as-amazon-netflix-xbox-google-.jpg") center/cover no-repeat; */
   background: url("https://images.unsplash.com/photo-1530543787849-128d94430c6b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") center/cover no-repeat;
   display: flex;
@@ -137,7 +137,7 @@ body {
   max-width: 970px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  grid-column-gap: 1.5rem;
+  grid-column-gap: 3.5rem;
   grid-row-gap: 1rem;
 }
 

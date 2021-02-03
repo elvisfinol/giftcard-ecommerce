@@ -12,8 +12,112 @@
       "sys": { "id": "2" },
       "fields": {
         "title": "spotify gift card",
-        "price": 100,
+        "price": 10,
         "image": { "fields": { "file": { "url": "./images/products/spotify-gift-card.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "3" },
+      "fields": {
+        "title": "twitch gift card",
+        "price": 10,
+        "image": { "fields": { "file": { "url": "./images/products/twitch-gift-card.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "4" },
+      "fields": {
+        "title": "netflix gift card",
+        "price": 10,
+        "image": { "fields": { "file": { "url": "./images/products/netflix-gift-card.png" } } }
+      }
+    },
+    {
+      "sys": { "id": "5" },
+      "fields": {
+        "title": "google gift card",
+        "price": 10,
+        "image": { "fields": { "file": { "url": "./images/products/google-gift-card.png" } } }
+      }
+    },
+    {
+      "sys": { "id": "6" },
+      "fields": {
+        "title": "xbox gift card",
+        "price": 10,
+        "image": { "fields": { "file": { "url": "./images/products/xbox-gift-card.png" } } }
+      }
+    },
+    {
+      "sys": { "id": "7" },
+      "fields": {
+        "title": "nintendo gift card",
+        "price": 10,
+        "image": { "fields": { "file": { "url": "./images/products/nintendo-gift-card.png" } } }
+      }
+    },
+    {
+      "sys": { "id": "8" },
+      "fields": {
+        "title": "hbo gift card",
+        "price": 10,
+        "image": { "fields": { "file": { "url": "./images/products/hbo-gift-card.png" } } }
+      }
+    },
+    {
+      "sys": { "id": "9" },
+      "fields": {
+        "title": "apple gift card",
+        "price": 10,
+        "image": { "fields": { "file": { "url": "./images/products/apple-gift-card.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "10" },
+      "fields": {
+        "title": "hulu gift card",
+        "price": 10,
+        "image": { "fields": { "file": { "url": "./images/products/hulu-gift-card.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "11" },
+      "fields": {
+        "title": "tidal gift card",
+        "price": 10,
+        "image": { "fields": { "file": { "url": "./images/products/tidal-gift-card.png" } } }
+      }
+    },
+    {
+      "sys": { "id": "11" },
+      "fields": {
+        "title": "best buy gift card",
+        "price": 10,
+        "image": { "fields": { "file": { "url": "./images/products/best-buy-gift-card.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "11" },
+      "fields": {
+        "title": "EA gift card",
+        "price": 10,
+        "image": { "fields": { "file": { "url": "./images/products/ea-gift-card.png" } } }
+      }
+    },
+    {
+      "sys": { "id": "11" },
+      "fields": {
+        "title": "ebay gift card",
+        "price": 10,
+        "image": { "fields": { "file": { "url": "./images/products/ebay-gift-card.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "11" },
+      "fields": {
+        "title": "target gift card",
+        "price": 10,
+        "image": { "fields": { "file": { "url": "./images/products/target-gift-card.png" } } }
       }
     }
   ]
